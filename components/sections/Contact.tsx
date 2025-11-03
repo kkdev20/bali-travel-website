@@ -107,7 +107,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-padding bg-gray-50">
+    <section id="contact" className="section-padding bg-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -139,13 +139,13 @@ export default function Contact() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-8"
                 >
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-emerald-500 dark:bg-amber-500 flex items-center justify-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-black border-2 border-black flex items-center justify-center">
                     <Send className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-2 text-light-text-primary dark:text-dark-text-primary">
+                  <h3 className="text-2xl font-bold mb-2 text-black">
                     {t('contact.form.thanks')}
                   </h3>
-                  <p className="text-light-text-secondary dark:text-dark-text-secondary">
+                  <p className="text-gray-600">
                     {t('contact.form.success')}
                   </p>
                 </motion.div>
@@ -225,10 +225,10 @@ export default function Contact() {
           >
             <Card className="p-8 h-full !border-gray-300 !border">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2 text-light-text-primary dark:text-dark-text-primary">
+                <h3 className="text-2xl font-bold mb-2 text-black">
                   {t('testimonials.title')}
                 </h3>
-                <p className="text-sm text-light-text-secondary dark:text-dark-text-secondary">
+                <p className="text-sm text-gray-600">
                   {t('testimonials.subtitle')}
                 </p>
               </div>
@@ -243,7 +243,7 @@ export default function Contact() {
                     transition={{ duration: 0.5 }}
                     className="text-center"
                   >
-                    <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-4 border-emerald-500 dark:border-amber-500">
+                    <div className="w-20 h-20 overflow-hidden mx-auto mb-4 border-4 border-black">
                       <Image
                         src={currentTestimonial.image}
                         alt={currentTestimonial.name}
@@ -257,19 +257,19 @@ export default function Contact() {
                         <Star
                           key={i}
                           className={`w-4 h-4 ${
-                            i < currentTestimonial.rating ? 'text-yellow-400' : 'text-gray-300 dark:text-gray-600'
+                            i < currentTestimonial.rating ? 'text-yellow-400' : 'text-gray-300'
                           }`}
                           fill="currentColor"
                         />
                       ))}
                     </div>
-                    <p className="text-sm italic text-light-text-primary dark:text-dark-text-primary mb-4">
+                    <p className="text-sm italic text-black mb-4">
                       "{currentTestimonial.text}"
                     </p>
-                    <h4 className="font-semibold text-light-text-primary dark:text-dark-text-primary">
+                    <h4 className="font-semibold text-black">
                       {currentTestimonial.name}
                     </h4>
-                    <p className="text-xs text-light-text-secondary dark:text-dark-text-secondary">
+                    <p className="text-xs text-gray-600">
                       {currentTestimonial.location}
                     </p>
                   </motion.div>
@@ -278,21 +278,21 @@ export default function Contact() {
                 {/* Navigation Buttons */}
                 <motion.button
                   onClick={goToPrevious}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 p-2 rounded-full bg-light-bg-secondary dark:bg-dark-bg-secondary shadow-md hover:scale-110 transition-transform"
+                  className="absolute left-0 top-1/2 -translate-y-1/2 p-2 border border-gray-300 bg-white shadow-md hover:scale-110 transition-transform"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   aria-label="Previous testimonial"
                 >
-                  <ChevronLeft className="w-5 h-5 text-light-text-primary dark:text-dark-text-primary" />
+                  <ChevronLeft className="w-5 h-5 text-black" />
                 </motion.button>
                 <motion.button
                   onClick={goToNext}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 p-2 rounded-full bg-light-bg-secondary dark:bg-dark-bg-secondary shadow-md hover:scale-110 transition-transform"
+                  className="absolute right-0 top-1/2 -translate-y-1/2 p-2 border border-gray-300 bg-white shadow-md hover:scale-110 transition-transform"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   aria-label="Next testimonial"
                 >
-                  <ChevronRight className="w-5 h-5 text-light-text-primary dark:text-dark-text-primary" />
+                  <ChevronRight className="w-5 h-5 text-black" />
                 </motion.button>
 
                 {/* Navigation Dots */}
@@ -301,10 +301,10 @@ export default function Contact() {
                     <button
                       key={index}
                       onClick={() => setCurrentTestimonialIndex(index)}
-                      className={`w-2 h-2 rounded-full transition-colors ${
+                      className={`w-2 h-2 transition-colors ${
                         index === currentTestimonialIndex
-                          ? 'bg-emerald-500 dark:bg-amber-500'
-                          : 'bg-gray-300 dark:bg-gray-600'
+                          ? 'bg-black'
+                          : 'bg-gray-300'
                       }`}
                       aria-label={`Go to testimonial ${index + 1}`}
                     />

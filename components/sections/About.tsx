@@ -150,16 +150,10 @@ export default function About() {
                 </div>
               )}
               <h4 className="text-2xl font-bold mb-2">{t(tier.name)}</h4>
-              <div className="mb-6">
+              <div className="mb-8">
                 <span className="text-4xl font-bold">{tier.price}</span>
                 <span className="text-lg opacity-80">/person</span>
               </div>
-              <ul className="space-y-3 mb-8 text-left">
-                <li className="flex items-center gap-2">
-                  <span>✓</span>
-                  <span className={tier.popular ? 'text-white' : 'text-gray-600'}>Feature 1</span>
-                </li>
-              </ul>
               <Button
                 variant={tier.popular ? 'secondary' : 'primary'}
                 size="md"
