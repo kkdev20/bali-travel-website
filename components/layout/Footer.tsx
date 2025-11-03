@@ -1,6 +1,6 @@
 'use client'
 
-import { Instagram, Mail, Phone, MapPin } from 'lucide-react'
+import { Instagram, Mail, Phone, MapPin, Plane } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '../providers/LanguageProvider'
 
@@ -13,9 +13,9 @@ const socialLinks = [
 export default function Footer() {
   const { t } = useLanguage()
   return (
-    <footer className="bg-light-bg-secondary dark:bg-dark-bg-secondary border-t border-light-brand-green/10 dark:border-dark-brand-gold/10">
+    <footer className="bg-gray-50 border-t border-gray-200">
       <div className="container-custom section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -23,10 +23,11 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-light-brand-green to-light-brand-blue dark:from-dark-brand-gold dark:to-dark-brand-teal bg-clip-text text-transparent mb-4">
-              🌴 Bali Travel
+            <h3 className="text-2xl font-bold text-black mb-4 flex items-center gap-2">
+              <Plane className="w-6 h-6" />
+              Bali Travel
             </h3>
-            <p className="text-light-text-secondary dark:text-dark-text-secondary text-sm">
+            <p className="text-gray-600 text-sm">
               {t('footer.description')}
             </p>
           </motion.div>
@@ -38,21 +39,41 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h4 className="font-semibold mb-4 text-light-text-primary dark:text-dark-text-primary">
+            <h4 className="font-semibold mb-4 text-black">
               {t('footer.links.title')}
             </h4>
             <ul className="space-y-2">
-              {['Destinations', 'Services', 'Gallery', 'About'].map((link) => (
+              {['Destinations', 'Services', 'About'].map((link) => (
                 <li key={link}>
                   <a
                     href={`#${link.toLowerCase()}`}
-                    className="text-sm text-light-text-secondary dark:text-dark-text-secondary hover:text-light-brand-green dark:hover:text-dark-brand-gold transition-colors"
+                    className="text-sm text-gray-600 hover:text-black transition-colors"
                   >
                     {link}
                   </a>
                 </li>
               ))}
             </ul>
+          </motion.div>
+
+          {/* Google Maps */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="lg:col-span-1"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15773.223083668635!2d115.216977!3d-8.670458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2409b0e0e3a45%3A0x501e8f1fc2911c0!2sDenpasar%2C%20Bali%2C%20Indonesia!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+              width="100%"
+              height="200"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full border border-gray-300"
+            />
           </motion.div>
 
           {/* Contact Info */}
@@ -62,11 +83,11 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h4 className="font-semibold mb-4 text-light-text-primary dark:text-dark-text-primary">
+            <h4 className="font-semibold mb-4 text-black">
               {t('footer.contact.title')}
             </h4>
             <div className="space-y-3">
-              <div className="flex items-center gap-2 text-sm text-light-text-secondary dark:text-dark-text-secondary">
+              <div className="flex items-center gap-2 text-sm text-gray-600">
                 <MapPin className="w-4 h-4" />
                 <span>Denpasar, Bali, Indonesia</span>
               </div>
@@ -77,10 +98,10 @@ export default function Footer() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-full bg-light-bg-primary dark:bg-dark-bg-primary hover:bg-light-brand-green dark:hover:bg-dark-brand-gold transition-colors"
+                    className="p-2 border border-gray-300 bg-white hover:bg-gray-100 transition-colors"
                     aria-label={label}
                   >
-                    <Icon className="w-5 h-5" />
+                    <Icon className="w-5 h-5 text-black" />
                   </a>
                 ))}
               </div>
@@ -88,7 +109,7 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-light-brand-green/10 dark:border-dark-brand-gold/10 text-center text-sm text-light-text-secondary dark:text-dark-text-secondary">
+        <div className="mt-12 pt-8 border-t border-gray-200 text-center text-sm text-gray-600">
           <p>&copy; {new Date().getFullYear()} Bali Travel. {t('footer.copyright')}</p>
         </div>
       </div>

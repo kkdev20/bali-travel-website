@@ -8,11 +8,11 @@
   }
 
   body {
-    @apply bg-light-bg-primary text-light-text-primary transition-colors duration-[var(--transition-theme)];
+    @apply bg-white text-black transition-colors duration-[var(--transition-theme)];
   }
 
   .dark body {
-    @apply bg-dark-bg-primary text-dark-text-primary;
+    @apply bg-black text-white;
   }
 
   html {
@@ -22,7 +22,7 @@
 
 @layer utilities {
   .glass {
-    @apply backdrop-blur-md bg-white/80 dark:bg-dark-bg-secondary/80;
+    @apply bg-white dark:bg-black border border-black dark:border-white;
   }
 
   .gradient-overlay {
@@ -30,7 +30,7 @@
   }
 
   .section-padding {
-    @apply py-20 px-4 sm:px-6 lg:px-8;
+    @apply py-8 px-4 sm:px-6 lg:px-8;
   }
 
   .container-custom {
@@ -44,14 +44,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-light-bg-secondary dark:bg-dark-bg-secondary;
+  @apply bg-white;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-light-brand-green dark:bg-dark-brand-gold rounded-full;
+  @apply bg-black;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-light-brand-green-dark dark:bg-dark-brand-gold-dark;
+  @apply bg-gray-800;
 }
 

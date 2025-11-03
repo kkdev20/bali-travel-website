@@ -27,10 +27,10 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-light-text-primary dark:text-dark-text-primary">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-light-text-primary dark:text-dark-text-primary">
             {t('services.title')}
           </h2>
-          <p className="text-lg text-light-text-secondary dark:text-dark-text-secondary max-w-2xl mx-auto">
+          <p className="text-base text-light-text-secondary dark:text-dark-text-secondary max-w-2xl mx-auto">
             {t('services.subtitle')}
           </p>
         </motion.div>
@@ -45,7 +45,7 @@ export default function Services() {
                   initial={{ rotate: 0 }}
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
-                  className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-light-brand-green to-light-brand-blue dark:from-dark-brand-gold dark:to-dark-brand-teal flex items-center justify-center"
+                  className="w-16 h-16 mx-auto mb-4 rounded-full bg-emerald-500 dark:bg-amber-500 flex items-center justify-center"
                 >
                   <Icon className="w-8 h-8 text-white" />
                 </motion.div>
@@ -68,10 +68,10 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h3 className="text-3xl font-bold mb-4 text-light-text-primary dark:text-dark-text-primary">
+          <h3 className="text-2xl font-bold mb-3 text-light-text-primary dark:text-dark-text-primary">
             {t('services.pricing.title')}
           </h3>
-          <p className="text-light-text-secondary dark:text-dark-text-secondary">
+          <p className="text-sm text-light-text-secondary dark:text-dark-text-secondary">
             {t('services.pricing.subtitle')}
           </p>
         </motion.div>
@@ -87,8 +87,8 @@ export default function Services() {
               whileHover={{ y: -12, rotate: 1 }}
               className={`relative rounded-2xl p-8 shadow-xl transition-all duration-300 ${
                 tier.popular
-                  ? 'bg-gradient-to-br from-light-brand-green to-light-brand-blue dark:from-dark-brand-gold dark:to-dark-brand-teal text-white scale-105'
-                  : 'bg-light-bg-primary dark:bg-dark-bg-secondary border border-light-brand-green/10 dark:border-dark-brand-gold/10'
+                  ? 'bg-emerald-500 dark:bg-amber-500 text-white scale-105'
+                  : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700'
               }`}
             >
               {tier.popular && (

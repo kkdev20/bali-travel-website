@@ -22,12 +22,12 @@ export default function Button({
   className = '',
   type = 'button',
 }: ButtonProps) {
-  const baseStyles = 'font-semibold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2'
+  const baseStyles = 'font-semibold transition-all duration-300 inline-flex items-center justify-center gap-2 border border-gray-300'
   
   const variants = {
-    primary: 'bg-gradient-to-r from-light-brand-green to-light-brand-blue dark:from-dark-brand-gold dark:to-dark-brand-teal text-white hover:shadow-lg hover:scale-105',
-    secondary: 'bg-light-bg-secondary dark:bg-dark-bg-secondary text-light-text-primary dark:text-dark-text-primary hover:bg-light-brand-green/10 dark:hover:bg-dark-brand-gold/10',
-    outline: 'border-2 border-light-brand-green dark:border-dark-brand-gold text-light-brand-green dark:text-dark-brand-gold hover:bg-light-brand-green hover:text-white dark:hover:bg-dark-brand-gold dark:hover:text-dark-bg-primary',
+    primary: 'bg-black text-white hover:bg-gray-800 transition-all duration-300',
+    secondary: 'bg-white text-black hover:bg-gray-100 transition-all duration-300',
+    outline: 'bg-transparent border border-gray-300 text-black hover:bg-gray-50 hover:border-gray-400 transition-all duration-300',
   }
 
   const sizes = {

@@ -26,7 +26,7 @@ export default function ScrollProgress() {
         scaleX: scrollProgress / 100,
       }}
     >
-      <div className="h-full w-full bg-gradient-to-r from-light-brand-green via-light-brand-blue to-light-brand-orange dark:from-dark-brand-gold dark:via-dark-brand-teal dark:to-dark-brand-gold" />
+      <div className="h-full w-full bg-orange-500" />
     </motion.div>
   )
 }

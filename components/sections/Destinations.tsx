@@ -73,7 +73,7 @@ const destinations: Destination[] = [
     name: 'Tanah Lot',
     category: ['Temples'],
     description: 'Ancient sea temple on a rock formation',
-    image: 'https://images.unsplash.com/photo-1534294228306-bd54eb9a7ba8?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
   },
   {
     id: 8,
@@ -102,19 +102,19 @@ export default function Destinations() {
     : destinations.filter(dest => dest.category.includes(selectedCategory))
 
   return (
-    <section id="destinations" className="section-padding bg-light-bg-primary dark:bg-dark-bg-primary">
+    <section id="destinations" className="section-padding bg-gray-100">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-light-text-primary dark:text-dark-text-primary">
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 text-black">
             {t('destinations.title')}
           </h2>
-          <p className="text-lg text-light-text-secondary dark:text-dark-text-secondary max-w-2xl mx-auto">
+          <p className="text-sm text-gray-600 max-w-2xl mx-auto mb-6">
             {t('destinations.subtitle')}
           </p>
         </motion.div>
@@ -131,10 +131,10 @@ export default function Destinations() {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+              className={`px-4 py-1.5 text-sm font-medium transition-all duration-300 border border-gray-300 ${
                 selectedCategory === category
-                  ? 'bg-gradient-to-r from-light-brand-green to-light-brand-blue dark:from-dark-brand-gold dark:to-dark-brand-teal text-white shadow-lg'
-                  : 'bg-light-bg-secondary dark:bg-dark-bg-secondary text-light-text-secondary dark:text-dark-text-secondary hover:bg-light-brand-green/10 dark:hover:bg-dark-brand-gold/10'
+                  ? 'bg-black text-white border-black'
+                  : 'bg-white text-black hover:bg-gray-100'
               }`}
             >
               {t(categoryKeys[category])}
@@ -159,7 +159,7 @@ export default function Destinations() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer"
+                className="group relative overflow-hidden cursor-pointer rounded-tr-2xl rounded-bl-2xl"
               >
                 <div className="relative h-64 overflow-hidden">
                   <Image
@@ -170,30 +170,22 @@ export default function Destinations() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="gradient-overlay" />
-                  <div className="absolute top-4 left-4 flex gap-2 flex-wrap">
-                    {destination.category.map((cat) => (
-                      <span
-                        key={cat}
-                        className="px-3 py-1 text-xs font-medium bg-white/90 dark:bg-dark-bg-primary/90 rounded-full text-light-text-primary dark:text-dark-text-primary"
-                      >
-                        {cat}
-                      </span>
-                    ))}
-                  </div>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <div className="flex items-center gap-2 mb-2">
-                    <MapPin className="w-4 h-4" />
-                    <h3 className="text-2xl font-bold">{destination.name}</h3>
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <div className="flex items-center gap-2 mb-1">
+                    <MapPin className="w-3 h-3" />
+                    <h3 className="text-lg font-bold">{destination.name}</h3>
                   </div>
-                  <p className="text-sm text-white/90 mb-4">{destination.description}</p>
+                  <p className="text-xs text-white/90 mb-4">{destination.description}</p>
+                </div>
+                <div className="absolute bottom-0 right-0 p-0">
                   <Button
                     variant="primary"
                     size="sm"
                     onClick={() => {
                       // Handle explore click
                     }}
-                    className="w-full"
+                    className="!border-0 !bg-orange-500 !text-white hover:!bg-orange-600"
                   >
                     {t('destinations.cta')}
                   </Button>

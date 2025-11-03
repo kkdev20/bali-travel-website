@@ -127,7 +127,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero
     'hero.title': 'Temukan Keajaiban',
-    'hero.subtitle': 'Gerbang Menuju Surga - Panduan Perjalanan & Layanan Profesional',
+    'hero.subtitle': 'Gerbang Menuju Keindahan - Panduan Perjalanan & Layanan Profesional',
     'hero.cta.explore': 'Jelajahi Destinasi',
     'hero.cta.plan': 'Rencanakan Perjalanan',
     'hero.scroll': 'Gulir untuk menjelajahi',
@@ -209,7 +209,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.info.location': 'Lokasi',
     
     // Footer
-    'footer.description': 'Gerbang menuju surga. Panduan perjalanan ahli dan layanan untuk menjelajahi pulau magis Bali.',
+    'footer.description': 'Gerbang menuju keindahan. Panduan perjalanan ahli dan layanan untuk menjelajahi pulau magis Bali.',
     'footer.links.title': 'Tautan Cepat',
     'footer.contact.title': 'Hubungi Kami',
     'footer.copyright': 'Hak cipta dilindungi.',

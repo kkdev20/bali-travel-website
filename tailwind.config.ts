@@ -10,45 +10,45 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Light mode - Tropical Bali theme
+        // Light mode - White dominant with black accents
         light: {
           bg: {
-            primary: '#FEFEFE',
-            secondary: '#F8F9FA',
-            accent: '#F0F8F5',
+            primary: '#FFFFFF',
+            secondary: '#F5F5F5',
+            accent: '#F0F0F0',
           },
           text: {
-            primary: '#1A1A1A',
-            secondary: '#4A5568',
-            accent: '#2D5016',
+            primary: '#000000',
+            secondary: '#333333',
+            accent: '#666666',
           },
           brand: {
-            green: '#22C55E',
-            'green-dark': '#16A34A',
-            blue: '#3B82F6',
-            'blue-dark': '#2563EB',
-            orange: '#F97316',
-            'orange-light': '#FB923C',
+            green: '#000000',
+            'green-dark': '#000000',
+            blue: '#000000',
+            'blue-dark': '#000000',
+            orange: '#000000',
+            'orange-light': '#000000',
           },
         },
-        // Dark mode - Deep navy/charcoal with gold accents
+        // Dark mode - Black dominant with white accents
         dark: {
           bg: {
-            primary: '#0F172A',
-            secondary: '#1E293B',
-            accent: '#1E3A5F',
+            primary: '#000000',
+            secondary: '#0A0A0A',
+            accent: '#1A1A1A',
           },
           text: {
-            primary: '#F1F5F9',
-            secondary: '#CBD5E1',
-            accent: '#EAB308',
+            primary: '#FFFFFF',
+            secondary: '#CCCCCC',
+            accent: '#999999',
           },
           brand: {
-            gold: '#FBBF24',
-            'gold-dark': '#F59E0B',
-            teal: '#14B8A6',
-            'teal-dark': '#0D9488',
-            navy: '#1E3A8A',
+            gold: '#FFFFFF',
+            'gold-dark': '#FFFFFF',
+            teal: '#FFFFFF',
+            'teal-dark': '#FFFFFF',
+            navy: '#FFFFFF',
           },
         },
       },

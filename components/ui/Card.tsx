@@ -18,7 +18,7 @@ export default function Card({ children, className = '', hover = true, delay = 0
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
       whileHover={hover ? { y: -8, scale: 1.02 } : {}}
-      className={`bg-light-bg-primary dark:bg-dark-bg-secondary rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-light-brand-green/10 dark:border-dark-brand-gold/10 ${className}`}
+      className={`bg-white dark:bg-black p-6 transition-all duration-300 border-2 border-black dark:border-white ${className}`}
     >
       {children}
     </motion.div>
