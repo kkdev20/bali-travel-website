@@ -111,6 +111,17 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-gray-200 text-center text-sm text-gray-600">
           <p>&copy; {new Date().getFullYear()} Bali Travel. {t('footer.copyright')}</p>
+          <p className="mt-2 text-xs text-gray-500">
+            Powered by{' '}
+            <a 
+              href="https://wistack.site" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-black transition-colors"
+            >
+              wistack.site
+            </a>
+          </p>
         </div>
       </div>
     </footer>
