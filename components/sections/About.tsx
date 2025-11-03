@@ -124,13 +124,32 @@ export default function About() {
           <h3 className="text-2xl md:text-3xl font-bold mb-2 text-black">
             {t('services.pricing.title')}
           </h3>
-          <p className="text-sm text-gray-600 max-w-2xl mx-auto mb-6">
+          <p className="text-sm text-gray-600 max-w-3xl mx-auto mb-6">
             {t('services.pricing.subtitle')}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[{ name: pricingTierKeys[0], price: '$299', popular: false }, { name: pricingTierKeys[1], price: '$599', popular: true }, { name: pricingTierKeys[2], price: '$999', popular: false }].map((tier, index) => (
+          {[
+            { 
+              name: pricingTierKeys[0], 
+              price: '$299', 
+              popular: false, 
+              features: ['services.pricing.features.basic.tour', 'services.pricing.features.basic.transport', 'services.pricing.features.basic.meals'] 
+            },
+            { 
+              name: pricingTierKeys[1], 
+              price: '$599', 
+              popular: true, 
+              features: ['services.pricing.features.standard.guide', 'services.pricing.features.standard.transport', 'services.pricing.features.standard.meals', 'services.pricing.features.standard.hotel'] 
+            },
+            { 
+              name: pricingTierKeys[2], 
+              price: '$999', 
+              popular: false, 
+              features: ['services.pricing.features.premium.guide', 'services.pricing.features.premium.transport', 'services.pricing.features.premium.dining', 'services.pricing.features.premium.hotel', 'services.pricing.features.premium.itinerary'] 
+            }
+          ].map((tier, index) => (
             <motion.div
               key={tier.name}
               initial={{ opacity: 0, y: 20 }}
@@ -150,10 +169,18 @@ export default function About() {
                 </div>
               )}
               <h4 className="text-2xl font-bold mb-2">{t(tier.name)}</h4>
-              <div className="mb-8">
+              <div className="mb-6">
                 <span className="text-4xl font-bold">{tier.price}</span>
                 <span className="text-lg opacity-80">/person</span>
               </div>
+              <ul className="space-y-3 mb-8 text-left">
+                {tier.features.map((featureKey, idx) => (
+                  <li key={idx} className="flex items-center gap-2">
+                    <span className="text-lg">✓</span>
+                    <span className={tier.popular ? 'text-white' : 'text-gray-600'}>{t(featureKey)}</span>
+                  </li>
+                ))}
+              </ul>
               <Button
                 variant={tier.popular ? 'secondary' : 'primary'}
                 size="md"

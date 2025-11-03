@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Input from '../ui/Input'
 import Button from '../ui/Button'
 import Card from '../ui/Card'
-import { Send, Star, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Send, Star } from 'lucide-react'
 import Image from 'next/image'
 import { useLanguage } from '../providers/LanguageProvider'
 
@@ -73,14 +73,6 @@ export default function Contact() {
     return () => clearInterval(timer)
   }, [])
 
-  const goToNext = () => {
-    setCurrentTestimonialIndex((prev) => (prev + 1) % testimonials.length)
-  }
-
-  const goToPrevious = () => {
-    setCurrentTestimonialIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
-  }
-
   const currentTestimonial = testimonials[currentTestimonialIndex]
 
   const handleSubmit = async (e: FormEvent) => {
@@ -132,7 +124,7 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Card className="p-8 !border-gray-300 !border">
+            <Card className="p-8 !border-gray-300 !border !bg-white">
               {submitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -223,7 +215,7 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Card className="p-8 h-full !border-gray-300 !border">
+            <Card className="p-8 h-full !border-gray-300 !border !bg-white">
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold mb-2 text-black">
                   {t('testimonials.title')}
@@ -243,7 +235,7 @@ export default function Contact() {
                     transition={{ duration: 0.5 }}
                     className="text-center"
                   >
-                    <div className="w-20 h-20 overflow-hidden mx-auto mb-4 border-4 border-black">
+                    <div className="w-20 h-20 overflow-hidden mx-auto mb-4">
                       <Image
                         src={currentTestimonial.image}
                         alt={currentTestimonial.name}
@@ -274,26 +266,6 @@ export default function Contact() {
                     </p>
                   </motion.div>
                 </AnimatePresence>
-
-                {/* Navigation Buttons */}
-                <motion.button
-                  onClick={goToPrevious}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 p-2 border border-gray-300 bg-white shadow-md hover:scale-110 transition-transform"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  aria-label="Previous testimonial"
-                >
-                  <ChevronLeft className="w-5 h-5 text-black" />
-                </motion.button>
-                <motion.button
-                  onClick={goToNext}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 p-2 border border-gray-300 bg-white shadow-md hover:scale-110 transition-transform"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  aria-label="Next testimonial"
-                >
-                  <ChevronRight className="w-5 h-5 text-black" />
-                </motion.button>
 
                 {/* Navigation Dots */}
                 <div className="flex justify-center mt-6 gap-2">

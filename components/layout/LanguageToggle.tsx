@@ -8,13 +8,14 @@ export default function LanguageToggle() {
   const { language, setLanguage } = useLanguage()
 
   const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'id' : 'en')
+    const newLang = language === 'en' ? 'id' : 'en'
+    setLanguage(newLang)
   }
 
   return (
     <motion.button
       onClick={toggleLanguage}
-      className="relative flex items-center gap-1.5 px-2 py-1 text-sm font-medium text-light-text-secondary dark:text-dark-text-secondary hover:text-light-brand-green dark:hover:text-dark-brand-gold transition-colors duration-300"
+      className="relative flex items-center gap-1.5 px-2 py-1 text-sm font-medium text-gray-600 hover:text-black transition-colors duration-300"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       aria-label={`Switch to ${language === 'en' ? 'Indonesian' : 'English'}`}

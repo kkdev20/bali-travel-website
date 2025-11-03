@@ -75,6 +75,18 @@ const translations: Record<Language, Record<string, string>> = {
     'services.pricing.premium': 'Premium',
     'services.pricing.popular': 'Most Popular',
     'services.pricing.contact': 'Contact for Details',
+    'services.pricing.features.basic.tour': 'Tour Guide',
+    'services.pricing.features.basic.transport': 'Transportation',
+    'services.pricing.features.basic.meals': 'Basic Meals',
+    'services.pricing.features.standard.guide': 'Expert Guide',
+    'services.pricing.features.standard.transport': 'Private Transport',
+    'services.pricing.features.standard.meals': 'Premium Meals',
+    'services.pricing.features.standard.hotel': 'Hotel Booking',
+    'services.pricing.features.premium.guide': 'VIP Guide',
+    'services.pricing.features.premium.transport': 'Luxury Transport',
+    'services.pricing.features.premium.dining': 'Fine Dining',
+    'services.pricing.features.premium.hotel': '5-Star Hotel',
+    'services.pricing.features.premium.itinerary': 'Custom Itinerary',
     
     // Testimonials
     'testimonials.title': 'What Our Guests Say',
@@ -172,6 +184,18 @@ const translations: Record<Language, Record<string, string>> = {
     'services.pricing.premium': 'Premium',
     'services.pricing.popular': 'Paling Populer',
     'services.pricing.contact': 'Hubungi untuk Detail',
+    'services.pricing.features.basic.tour': 'Pemandu Wisata',
+    'services.pricing.features.basic.transport': 'Transportasi',
+    'services.pricing.features.basic.meals': 'Makanan Dasar',
+    'services.pricing.features.standard.guide': 'Pemandu Ahli',
+    'services.pricing.features.standard.transport': 'Transportasi Pribadi',
+    'services.pricing.features.standard.meals': 'Makanan Premium',
+    'services.pricing.features.standard.hotel': 'Pemesanan Hotel',
+    'services.pricing.features.premium.guide': 'Pemandu VIP',
+    'services.pricing.features.premium.transport': 'Transportasi Mewah',
+    'services.pricing.features.premium.dining': 'Makanan Fine Dining',
+    'services.pricing.features.premium.hotel': 'Hotel Bintang 5',
+    'services.pricing.features.premium.itinerary': 'Itinerari Kustom',
     
     // Testimonials
     'testimonials.title': 'Apa Kata Tamu Kami',
@@ -242,12 +266,16 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     return translations[language]?.[key] || translations.en[key] || key
   }
 
-  const contextValue = mounted
-    ? { language, setLanguage, t }
-    : defaultContextValue
+  if (!mounted) {
+    return (
+      <LanguageContext.Provider value={defaultContextValue}>
+        {children}
+      </LanguageContext.Provider>
+    )
+  }
 
   return (
-    <LanguageContext.Provider value={contextValue}>
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   )
